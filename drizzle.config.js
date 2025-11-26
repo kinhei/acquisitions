@@ -1,6 +1,5 @@
-import 'dotenv/config'; // Load environment variables from .env file
+import 'dotenv/config';
 
-// Drizzle configuration for database schema and connection
 export default {
   schema: './src/models/*.js',
   out: './drizzle',

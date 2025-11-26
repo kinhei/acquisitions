@@ -1,5 +1,5 @@
 {
-  "id": "f74cbe94-bc18-435e-b5a9-037694423954",
+  "id": "d849ff2b-4b8a-49c6-a4a0-ee9f27d1d0a7",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -16,19 +16,19 @@
         },
         "name": {
           "name": "name",
-          "type": "varchar(256)",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
         },
         "email": {
           "name": "email",
-          "type": "varchar(256)",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
         },
         "password": {
           "name": "password",
-          "type": "varchar(512)",
+          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
         },
@@ -39,15 +39,15 @@
           "notNull": true,
           "default": "'user'"
         },
-        "create_at": {
-          "name": "create_at",
+        "created_at": {
+          "name": "created_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
         },
-        "update_at": {
-          "name": "update_at",
+        "updated_at": {
+          "name": "updated_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": true,

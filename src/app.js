@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import authRoutes from '#routes/auth.routes.js';
 
 const app = express();
 
@@ -28,5 +29,23 @@ app.get('/', (req, res) => {
   logger.info('Hello from acquisitions!');
   res.status(200).send('Hello from acquisitions!');
 });
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'OK',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+  });
+});
+
+// Basic API root endpoint
+app.get('/api', (req, res) => {
+  res.status(200).json({ message: 'Acquisitions API is running' });
+});
+
+// Import and use auth routes
+// Note: Ensure the path is correct based on your project structure
+app.use('/api/auth', authRoutes); //api/auth/sign-in
 
 export default app;
